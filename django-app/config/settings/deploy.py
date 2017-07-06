@@ -21,6 +21,7 @@ DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 STATICFILES_STORAGE = 'config.storages.StaticStorage'
 
 # Static URLs
+LOGIN_URL = 'login'
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
 # media custom

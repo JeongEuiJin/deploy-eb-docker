@@ -1,0 +1,44 @@
+{% load staticfiles%}
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>{% block title %}Simple is Better Than Complex{% endblock %}</title>
+    <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.css'%}">
+</head>
+<body>
+<header>
+
+    <div class="container">
+
+<div class="row">
+  <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <h1>My Site</h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'member:logout' %}">logout</a>
+      {% else %}
+        <a href="{% url 'member:login' %}">login</a> / <a href="{% url 'member:signup' %}">signup</a>
+      {% endif %}
+      <hr>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+</div>
+
+<div class="col-md-4"></div>
+</div>
+
+
+
+</div>
+    </header>
+</body>
+</html>

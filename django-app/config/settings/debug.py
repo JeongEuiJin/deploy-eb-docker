@@ -9,6 +9,7 @@ WSGI_APPLICATION = 'config.wsgi.debug.application'
 #     'django_extensions',
 # ]
 # Static URLs
+LOGIN_URL = 'login'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
 

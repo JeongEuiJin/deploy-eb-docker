@@ -15,11 +15,10 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-#user custom
+# user custom
 AUTH_USER_MODEL = 'member.MyUser'
-
-
 
 # .config_secret폴더 및 하위 파일 경로
 CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'member',
+    'post',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +69,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATE_DIR,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,8 +83,6 @@ TEMPLATES = [
         },
     },
 ]
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -121,3 +121,4 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+
