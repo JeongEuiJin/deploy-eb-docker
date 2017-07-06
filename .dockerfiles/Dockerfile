@@ -20,6 +20,7 @@ RUN         ln -sf /etc/nginx/sites-available/nginx-app.conf /etc/nginx/sites-en
 
 # collectstatic 실행
 RUN         /root/.pyenv/versions/deploy_eb_docker/bin/python /srv/deploy_eb_docker/django-app/manage.py collectstatic --settings=config.settings.deploy --noinput
+#RUN         /root/.pyenv/versions/deploy_eb_docker/bin/python /srv/deploy_eb_docker/django-app/manage.py collectstatic --settings=config.settings.deploy --noinput
 
 CMD         supervisord -n
 EXPOSE      80 8000
